@@ -6,7 +6,7 @@ public class URLConfig {
 
     public static String PORT_DEVELOP = ":62063/api/fota/";//开发环境
 
-    public static String PORT_LASGING = ":62067/api/fota/";//联调环境
+    public static String PORT_LASGING = ":62070/api/fota/";//联调环境
 
 
     public static Config config = Config.JOINT_TUNE;//默认环境
