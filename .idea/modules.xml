@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/RemoteUpgrade.iml" filepath="$PROJECT_DIR$/RemoteUpgrade.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/remoteupgradesdk/remoteupgradesdk.iml" filepath="$PROJECT_DIR$/remoteupgradesdk/remoteupgradesdk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/N60.iml" filepath="$PROJECT_DIR$/N60.iml" />
+      <module fileurl="file://$PROJECT_DIR$/n60sdk/n60sdk.iml" filepath="$PROJECT_DIR$/n60sdk/n60sdk.iml" />
     </modules>
   </component>
 </project>

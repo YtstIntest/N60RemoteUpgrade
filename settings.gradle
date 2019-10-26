@@ -1,1 +1,1 @@
-include ':app', ':remoteupgradesdk'
+include ':n60sdk'
