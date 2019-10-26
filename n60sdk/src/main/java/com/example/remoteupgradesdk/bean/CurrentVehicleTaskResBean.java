@@ -69,6 +69,7 @@ public class CurrentVehicleTaskResBean {
         private int size;
         private String description;
         private int duration;
+        private int isNewTask;
         private String time;
 
         public String getTaskCarId() {
@@ -117,6 +118,14 @@ public class CurrentVehicleTaskResBean {
 
         public void setDuration(int duration) {
             this.duration = duration;
+        }
+
+        public int getIsNewTask() {
+            return isNewTask;
+        }
+
+        public void setIsNewTask(int isNewTask) {
+            this.isNewTask = isNewTask;
         }
 
         public String getTime() {
