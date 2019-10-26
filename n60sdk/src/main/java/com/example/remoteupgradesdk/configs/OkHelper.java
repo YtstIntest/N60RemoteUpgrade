@@ -5,7 +5,10 @@ import android.content.Context;
 import com.example.remoteupgradesdk.bean.CurrentVehicleTaskResBean;
 import com.example.remoteupgradesdk.bean.UpdateConfirInterfaceResBean;
 import com.example.remoteupgradesdk.bean.UpdateProgressBean;
+import com.example.remoteupgradesdk.bean.UpdateResultBean;
 import com.example.remoteupgradesdk.bean.UpdateVehicleTasksResBean;
+import com.example.remoteupgradesdk.bean.VerIformationBean;
+import com.example.remoteupgradesdk.bean.WebStateBean;
 import com.example.remoteupgradesdk.callback.JsonCallback;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheMode;
@@ -27,15 +30,52 @@ public class OkHelper extends Observable {
     public static String ERRO_MESSAGE = "加载异常，请重试！！！";
 
 
+    /**
+     * @param vin       车辆VIN
+     * @param taskcarId 车辆任务id
+     * @param uDate     操作时间
+     * @Description: 查询平台状态
+     * @Author: XL
+     * @CreateDate: 2019/10/26 9:19 AM
+     */
+    public static void queryState(Context context, String vin, String taskcarId, String uDate, JsonCallback<DataBackResult<WebStateBean>> callback) {
+        OkGo.<DataBackResult<WebStateBean>>get(URLConfig.s1)
+                .tag(context)
+                .cacheMode(CacheMode.NO_CACHE)
+                .params("vin", vin)
+                .params("taskcarId", taskcarId)
+                .params("uDate", uDate)
+                .execute(callback);
+    }
+
 
     /**
-     * @param vin 车辆VIN
-     * @desc 查询车辆升级任务信息
+     * @param vin   车辆VIN
+     * @param uDate 操作时间
+     * @desc 获取当前版本信息
+     * @author XL
+     * @create_time 2019/4/27
+     */
+    public static void getVersionInformation(Context context, String vin, String uDate, JsonCallback<DataBackResult<VerIformationBean>> callback) {
+        OkGo.<DataBackResult<VerIformationBean>>get(URLConfig.s1)
+                .tag(context)
+                .cacheMode(CacheMode.NO_CACHE)
+                .params("vin", vin)
+                .params("uDate", uDate)
+                .execute(callback);
+    }
+
+
+    /**
+     * @param vin       车辆VIN
+     * @param taskcarId 车辆任务id
+     * @param uDate     操作时间
+     * @desc 获取车辆升级信息
      * @author XL
      * @create_time 2019/4/27
      */
     public static void queryCarUpdateTask(Context context, String vin, String uDate, String taskcarId, JsonCallback<DataBackResult<CurrentVehicleTaskResBean>> callback) {
-        OkGo.<DataBackResult<CurrentVehicleTaskResBean>>get(URLConfig.queryCarUpdateTask())
+        OkGo.<DataBackResult<CurrentVehicleTaskResBean>>get(URLConfig.s1)
                 .tag(context)
                 .cacheMode(CacheMode.NO_CACHE)
                 .params("vin", vin)
@@ -45,16 +85,34 @@ public class OkHelper extends Observable {
     }
 
 
-
-
     /**
-     * @param vin 车辆VIN
-     * @desc 查询升级进度值
+     * @param vin       车辆VIN
+     * @param taskcarId 车辆任务id
+     * @param uDate     操作时间
+     * @desc 获取升级进度
      * @author XL
      * @create_time 2019/4/27
      */
     public static void queryUpdateProgress(Context context, String vin, String uDate, String taskcarId, JsonCallback<DataBackResult<UpdateProgressBean>> callback) {
-        OkGo.<DataBackResult<UpdateProgressBean>>get(URLConfig.queryCarUpdateTask())
+        OkGo.<DataBackResult<UpdateProgressBean>>get(URLConfig.s1)
+                .tag(context)
+                .cacheMode(CacheMode.NO_CACHE)
+                .params("vin", vin)
+                .params("uDate", uDate)
+                .params("taskcarId", taskcarId)
+                .execute(callback);
+    }
+
+    /**
+     * @param vin       车辆VIN
+     * @param taskcarId 车辆任务id
+     * @param uDate     操作时间
+     * @desc 查询升级结果
+     * @author XL
+     * @create_time 2019/4/27
+     */
+    public static void queryUpdateResult(Context context, String vin, String uDate, String taskcarId, JsonCallback<DataBackResult<UpdateResultBean>> callback) {
+        OkGo.<DataBackResult<UpdateResultBean>>get(URLConfig.s1)
                 .tag(context)
                 .cacheMode(CacheMode.NO_CACHE)
                 .params("vin", vin)
@@ -74,7 +132,7 @@ public class OkHelper extends Observable {
      * @create_time 2019/4/27
      */
     public static void confirmUpgrade(Context context, String taskcarId, String uDate, int type, int result, JsonCallback<DataBackResult<UpdateConfirInterfaceResBean>> callback) {
-        OkGo.<DataBackResult<UpdateConfirInterfaceResBean>>get(URLConfig.confirmUpgrade())
+        OkGo.<DataBackResult<UpdateConfirInterfaceResBean>>get(URLConfig.s2)
                 .tag(context)
                 .cacheMode(CacheMode.NO_CACHE)
                 .params("taskCarId", taskcarId)
@@ -94,7 +152,7 @@ public class OkHelper extends Observable {
      * @create_time 2019/4/27
      */
     public static void getUpdateTaskList(Context context, String vin, int pi, int ps, String uDate, JsonCallback<DataBackResult<UpdateVehicleTasksResBean>> callback) {
-        OkGo.<DataBackResult<UpdateVehicleTasksResBean>>get(URLConfig.getUpdateTaskList())
+        OkGo.<DataBackResult<UpdateVehicleTasksResBean>>get(URLConfig.s3)
                 .tag(context)
                 .cacheMode(CacheMode.NO_CACHE)
                 .params("vin", vin)

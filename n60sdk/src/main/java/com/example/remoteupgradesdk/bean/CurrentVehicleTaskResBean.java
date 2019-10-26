@@ -65,12 +65,10 @@ public class CurrentVehicleTaskResBean {
 
         private String taskCarId;
         private int taskType;
-        private String cVer;
         private String nVer;
         private int size;
         private String description;
         private int duration;
-        private int status;
         private String time;
 
         public String getTaskCarId() {
@@ -87,14 +85,6 @@ public class CurrentVehicleTaskResBean {
 
         public void setTaskType(int taskType) {
             this.taskType = taskType;
-        }
-
-        public String getCVer() {
-            return cVer;
-        }
-
-        public void setCVer(String cVer) {
-            this.cVer = cVer;
         }
 
         public String getNVer() {
@@ -128,15 +118,6 @@ public class CurrentVehicleTaskResBean {
         public void setDuration(int duration) {
             this.duration = duration;
         }
-
-        public int getStatus() {
-            return status;
-        }
-
-        public void setStatus(int status) {
-            this.status = status;
-        }
-
 
         public String getTime() {
             return time;

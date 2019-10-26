@@ -11,7 +11,6 @@ public class UpdateProgressBean {
      */
 
     private ResultBean result;
-    private int total;
     private int code;
     private String msg;
 
@@ -21,14 +20,6 @@ public class UpdateProgressBean {
 
     public void setResult(ResultBean result) {
         this.result = result;
-    }
-
-    public int getTotal() {
-        return total;
-    }
-
-    public void setTotal(int total) {
-        this.total = total;
     }
 
     public int getCode() {
@@ -63,27 +54,7 @@ public class UpdateProgressBean {
          * time: "2019-09-04T15:25:39.1259343+08:00"
          */
 
-        private String taskCarId;
-        private int status;
         private int progress;
-        private int isNewTask;
-        private int result;
-
-        public String getTaskCarId() {
-            return taskCarId;
-        }
-
-        public void setTaskCarId(String taskCarId) {
-            this.taskCarId = taskCarId;
-        }
-
-        public int getStatus() {
-            return status;
-        }
-
-        public void setStatus(int status) {
-            this.status = status;
-        }
 
         public int getProgress() {
             return progress;
@@ -93,21 +64,6 @@ public class UpdateProgressBean {
             this.progress = progress;
         }
 
-        public int getIsNewTask() {
-            return isNewTask;
-        }
-
-        public void setIsNewTask(int isNewTask) {
-            this.isNewTask = isNewTask;
-        }
-
-        public int getResult() {
-            return result;
-        }
-
-        public void setResult(int result) {
-            this.result = result;
-        }
     }
 
 
