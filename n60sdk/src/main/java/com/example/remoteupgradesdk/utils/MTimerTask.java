@@ -32,6 +32,7 @@ public class MTimerTask {
                                         stop();
                                     }
                                 }
+                                response.body().getBody().getResult().setVin(vin);
                                 callback.onSuccess(response.body().getBody());
                                 break;
                             case OkHelper.ERRO_NOT_FOUNT:

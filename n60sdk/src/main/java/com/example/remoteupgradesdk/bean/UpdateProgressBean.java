@@ -54,7 +54,16 @@ public class UpdateProgressBean {
          * time: "2019-09-04T15:25:39.1259343+08:00"
          */
 
+        private String vin;
         private int progress;
+
+        public String getVin() {
+            return vin;
+        }
+
+        public void setVin(String vin) {
+            this.vin = vin;
+        }
 
         public int getProgress() {
             return progress;
@@ -65,7 +74,6 @@ public class UpdateProgressBean {
         }
 
     }
-
 
 
 }
