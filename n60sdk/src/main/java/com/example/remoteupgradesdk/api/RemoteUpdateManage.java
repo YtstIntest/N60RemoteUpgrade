@@ -122,7 +122,7 @@ public class RemoteUpdateManage {
      * @CreateDate: 2019/10/26 12:15 PM
      */
     public void getVersionInformation(String vin, String uDate, final ResponseCallback<VerIformationBean> callback) {
-        OkHelper.getVersionInformation(context, vin, uDate, new JsonCallback<DataBackResult<VerIformationBean>>() {
+        OkHelper.getVersionInformation(context, vin, "", uDate, new JsonCallback<DataBackResult<VerIformationBean>>() {
             @Override
             public void onSuccess(Response<DataBackResult<VerIformationBean>> response) {
                 switch (response.body().getStatusCode()) {

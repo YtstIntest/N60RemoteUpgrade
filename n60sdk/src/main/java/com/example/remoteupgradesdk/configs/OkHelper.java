@@ -56,11 +56,12 @@ public class OkHelper extends Observable {
      * @author XL
      * @create_time 2019/4/27
      */
-    public static void getVersionInformation(Context context, String vin, String uDate, JsonCallback<DataBackResult<VerIformationBean>> callback) {
+    public static void getVersionInformation(Context context, String vin, String taskcarId,String uDate, JsonCallback<DataBackResult<VerIformationBean>> callback) {
         OkGo.<DataBackResult<VerIformationBean>>get(URLConfig.s1)
                 .tag(context)
                 .cacheMode(CacheMode.NO_CACHE)
                 .params("vin", vin)
+                .params("taskcarId", taskcarId)
                 .params("uDate", uDate)
                 .execute(callback);
     }
