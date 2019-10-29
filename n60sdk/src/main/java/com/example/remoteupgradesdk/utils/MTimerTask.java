@@ -25,7 +25,7 @@ public class MTimerTask {
         task = new TimerTask() {
             @Override
             public void run() {
-                if (simulationModle.getUpdateProgressBean(vin, ++progress).getResult().getProgress() == 101) {
+                if (simulationModle.getUpdateProgressBean(vin, ++progress).getResult().getProgress() == 100) {
                     stop();
                 }
                 callback.onSuccess(simulationModle.getUpdateProgressBean(vin, progress));
