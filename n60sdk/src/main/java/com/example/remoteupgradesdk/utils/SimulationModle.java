@@ -21,7 +21,7 @@ public class SimulationModle {
         resultBean.setStatus(status);
         bean.setResult(resultBean);
 
-        return null;
+        return bean;
     }
 
     public CurrentVehicleTaskResBean getCurrentVehicleTaskResBean() {
