@@ -3,7 +3,6 @@ package com.example.remoteupgradesdk.bean;
 public class VerIformationBean {
 
 
-    public static class BodyBean {
         /**
          * result : {"taskCarId":null,"taskType":0,"cVer":"1.012.1","nVer":"","size":0,"description":"","duration":0,"status":0,"progress":0,"result":0,"isNewTask":0,"time":""}
          * total : 0
@@ -65,5 +64,4 @@ public class VerIformationBean {
                 this.cVer = cVer;
             }
         }
-    }
 }

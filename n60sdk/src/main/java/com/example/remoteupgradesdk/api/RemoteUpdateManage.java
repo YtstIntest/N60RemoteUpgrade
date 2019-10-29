@@ -14,6 +14,7 @@ import com.example.remoteupgradesdk.configs.DataBackResult;
 import com.example.remoteupgradesdk.configs.OkHelper;
 import com.example.remoteupgradesdk.interfaces.ResponseCallback;
 import com.example.remoteupgradesdk.utils.MTimerTask;
+import com.example.remoteupgradesdk.utils.SimulationModle;
 import com.lzy.okgo.model.Response;
 
 import java.util.ArrayList;
@@ -23,6 +24,7 @@ import java.util.List;
 public class RemoteUpdateManage {
     private Context context;
     private List<MTimerTask> tasks = new ArrayList<>();
+    private SimulationModle simulationModle = new SimulationModle();
 
 
     public RemoteUpdateManage(Context context) {
@@ -40,35 +42,36 @@ public class RemoteUpdateManage {
      * @Author: XL
      * @CreateDate: 2019/10/26 9:39 AM
      */
-    public void queryState(String vin, String taskCarId, String uDate, final ResponseCallback<WebStateBean> callback) {
-        OkHelper.queryState(context, vin, taskCarId, uDate, new JsonCallback<DataBackResult<WebStateBean>>() {
-            @Override
-            public void onSuccess(Response<DataBackResult<WebStateBean>> response) {
-                switch (response.body().getStatusCode()) {
-                    case OkHelper.SUCCESS:
-                        callback.onSuccess(response.body().getBody());
-                        break;
-                    case OkHelper.ERRO_NOT_FOUNT:
-                        callback.onError(OkHelper.ERRO_NOT_FOUNT_MESSAGE);
-                        break;
-                    case OkHelper.ERRO_SERVER:
-                        callback.onError(OkHelper.ERRO_SERVER_MESSAGE);
-                        break;
-                    case OkHelper.ERRO_UPTATE:
-                        callback.onError(OkHelper.ERRO_UPTATE_MESSAGE);
-                        break;
-                    default:
-                        callback.onError(OkHelper.ERRO_NOT_MESSAGE);
-                        break;
-                }
-            }
-
-            @Override
-            public void onError(Response<DataBackResult<WebStateBean>> response) {
-                super.onError(response);
-                callback.onError(OkHelper.ERRO_MESSAGE);
-            }
-        });
+    public void queryState(String vin, String taskCarId, String uDate, int status, final ResponseCallback<WebStateBean> callback) {
+        callback.onSuccess(simulationModle.getWebStateBean(status));
+//        OkHelper.queryState(context, vin, taskCarId, uDate, new JsonCallback<DataBackResult<WebStateBean>>() {
+//            @Override
+//            public void onSuccess(Response<DataBackResult<WebStateBean>> response) {
+//                switch (response.body().getStatusCode()) {
+//                    case OkHelper.SUCCESS:
+//                        callback.onSuccess(response.body().getBody());
+//                        break;
+//                    case OkHelper.ERRO_NOT_FOUNT:
+//                        callback.onError(OkHelper.ERRO_NOT_FOUNT_MESSAGE);
+//                        break;
+//                    case OkHelper.ERRO_SERVER:
+//                        callback.onError(OkHelper.ERRO_SERVER_MESSAGE);
+//                        break;
+//                    case OkHelper.ERRO_UPTATE:
+//                        callback.onError(OkHelper.ERRO_UPTATE_MESSAGE);
+//                        break;
+//                    default:
+//                        callback.onError(OkHelper.ERRO_NOT_MESSAGE);
+//                        break;
+//                }
+//            }
+//
+//            @Override
+//            public void onError(Response<DataBackResult<WebStateBean>> response) {
+//                super.onError(response);
+//                callback.onError(OkHelper.ERRO_MESSAGE);
+//            }
+//        });
 
 
     }
@@ -83,34 +86,35 @@ public class RemoteUpdateManage {
      * @CreateDate: 2019/9/19 3:50 PM
      */
     public void getCarUpdateTask(String vin, String taskCarId, String uDate, final ResponseCallback<CurrentVehicleTaskResBean> callback) {
-        OkHelper.queryCarUpdateTask(context, vin, uDate, taskCarId, new JsonCallback<DataBackResult<CurrentVehicleTaskResBean>>() {
-            @Override
-            public void onSuccess(Response<DataBackResult<CurrentVehicleTaskResBean>> response) {
-                switch (response.body().getStatusCode()) {
-                    case OkHelper.SUCCESS:
-                        callback.onSuccess(response.body().getBody());
-                        break;
-                    case OkHelper.ERRO_NOT_FOUNT:
-                        callback.onError(OkHelper.ERRO_NOT_FOUNT_MESSAGE);
-                        break;
-                    case OkHelper.ERRO_SERVER:
-                        callback.onError(OkHelper.ERRO_SERVER_MESSAGE);
-                        break;
-                    case OkHelper.ERRO_UPTATE:
-                        callback.onError(OkHelper.ERRO_UPTATE_MESSAGE);
-                        break;
-                    default:
-                        callback.onError(OkHelper.ERRO_NOT_MESSAGE);
-                        break;
-                }
-            }
-
-            @Override
-            public void onError(Response<DataBackResult<CurrentVehicleTaskResBean>> response) {
-                super.onError(response);
-                callback.onError(OkHelper.ERRO_MESSAGE);
-            }
-        });
+        callback.onSuccess(simulationModle.getCurrentVehicleTaskResBean());
+//        OkHelper.queryCarUpdateTask(context, vin, uDate, taskCarId, new JsonCallback<DataBackResult<CurrentVehicleTaskResBean>>() {
+//            @Override
+//            public void onSuccess(Response<DataBackResult<CurrentVehicleTaskResBean>> response) {
+//                switch (response.body().getStatusCode()) {
+//                    case OkHelper.SUCCESS:
+//                        callback.onSuccess(response.body().getBody());
+//                        break;
+//                    case OkHelper.ERRO_NOT_FOUNT:
+//                        callback.onError(OkHelper.ERRO_NOT_FOUNT_MESSAGE);
+//                        break;
+//                    case OkHelper.ERRO_SERVER:
+//                        callback.onError(OkHelper.ERRO_SERVER_MESSAGE);
+//                        break;
+//                    case OkHelper.ERRO_UPTATE:
+//                        callback.onError(OkHelper.ERRO_UPTATE_MESSAGE);
+//                        break;
+//                    default:
+//                        callback.onError(OkHelper.ERRO_NOT_MESSAGE);
+//                        break;
+//                }
+//            }
+//
+//            @Override
+//            public void onError(Response<DataBackResult<CurrentVehicleTaskResBean>> response) {
+//                super.onError(response);
+//                callback.onError(OkHelper.ERRO_MESSAGE);
+//            }
+//        });
 
     }
 
@@ -122,34 +126,35 @@ public class RemoteUpdateManage {
      * @CreateDate: 2019/10/26 12:15 PM
      */
     public void getVersionInformation(String vin, String uDate, final ResponseCallback<VerIformationBean> callback) {
-        OkHelper.getVersionInformation(context, vin, "", uDate, new JsonCallback<DataBackResult<VerIformationBean>>() {
-            @Override
-            public void onSuccess(Response<DataBackResult<VerIformationBean>> response) {
-                switch (response.body().getStatusCode()) {
-                    case OkHelper.SUCCESS:
-                        callback.onSuccess(response.body().getBody());
-                        break;
-                    case OkHelper.ERRO_NOT_FOUNT:
-                        callback.onError(OkHelper.ERRO_NOT_FOUNT_MESSAGE);
-                        break;
-                    case OkHelper.ERRO_SERVER:
-                        callback.onError(OkHelper.ERRO_SERVER_MESSAGE);
-                        break;
-                    case OkHelper.ERRO_UPTATE:
-                        callback.onError(OkHelper.ERRO_UPTATE_MESSAGE);
-                        break;
-                    default:
-                        callback.onError(OkHelper.ERRO_NOT_MESSAGE);
-                        break;
-                }
-            }
-
-            @Override
-            public void onError(Response<DataBackResult<VerIformationBean>> response) {
-                super.onError(response);
-                callback.onError(OkHelper.ERRO_MESSAGE);
-            }
-        });
+        callback.onSuccess(simulationModle.getVerIformationBean());
+//        OkHelper.getVersionInformation(context, vin, "", uDate, new JsonCallback<DataBackResult<VerIformationBean>>() {
+//            @Override
+//            public void onSuccess(Response<DataBackResult<VerIformationBean>> response) {
+//                switch (response.body().getStatusCode()) {
+//                    case OkHelper.SUCCESS:
+//                        callback.onSuccess(response.body().getBody());
+//                        break;
+//                    case OkHelper.ERRO_NOT_FOUNT:
+//                        callback.onError(OkHelper.ERRO_NOT_FOUNT_MESSAGE);
+//                        break;
+//                    case OkHelper.ERRO_SERVER:
+//                        callback.onError(OkHelper.ERRO_SERVER_MESSAGE);
+//                        break;
+//                    case OkHelper.ERRO_UPTATE:
+//                        callback.onError(OkHelper.ERRO_UPTATE_MESSAGE);
+//                        break;
+//                    default:
+//                        callback.onError(OkHelper.ERRO_NOT_MESSAGE);
+//                        break;
+//                }
+//            }
+//
+//            @Override
+//            public void onError(Response<DataBackResult<VerIformationBean>> response) {
+//                super.onError(response);
+//                callback.onError(OkHelper.ERRO_MESSAGE);
+//            }
+//        });
 
     }
 
@@ -178,34 +183,35 @@ public class RemoteUpdateManage {
      * @CreateDate: 2019/10/26 9:58 AM
      */
     public void queryUpdateResult(String vin, String taskCarId, String uDate, final ResponseCallback<UpdateResultBean> callback) {
-        OkHelper.queryUpdateResult(context, vin, uDate, taskCarId, new JsonCallback<DataBackResult<UpdateResultBean>>() {
-            @Override
-            public void onSuccess(Response<DataBackResult<UpdateResultBean>> response) {
-                switch (response.body().getStatusCode()) {
-                    case OkHelper.SUCCESS:
-                        callback.onSuccess(response.body().getBody());
-                        break;
-                    case OkHelper.ERRO_NOT_FOUNT:
-                        callback.onError(OkHelper.ERRO_NOT_FOUNT_MESSAGE);
-                        break;
-                    case OkHelper.ERRO_SERVER:
-                        callback.onError(OkHelper.ERRO_SERVER_MESSAGE);
-                        break;
-                    case OkHelper.ERRO_UPTATE:
-                        callback.onError(OkHelper.ERRO_UPTATE_MESSAGE);
-                        break;
-                    default:
-                        callback.onError(OkHelper.ERRO_NOT_MESSAGE);
-                        break;
-                }
-            }
-
-            @Override
-            public void onError(Response<DataBackResult<UpdateResultBean>> response) {
-                super.onError(response);
-                callback.onError(OkHelper.ERRO_MESSAGE);
-            }
-        });
+        callback.onSuccess(simulationModle.getUpdateResultBean());
+//        OkHelper.queryUpdateResult(context, vin, uDate, taskCarId, new JsonCallback<DataBackResult<UpdateResultBean>>() {
+//            @Override
+//            public void onSuccess(Response<DataBackResult<UpdateResultBean>> response) {
+//                switch (response.body().getStatusCode()) {
+//                    case OkHelper.SUCCESS:
+//                        callback.onSuccess(response.body().getBody());
+//                        break;
+//                    case OkHelper.ERRO_NOT_FOUNT:
+//                        callback.onError(OkHelper.ERRO_NOT_FOUNT_MESSAGE);
+//                        break;
+//                    case OkHelper.ERRO_SERVER:
+//                        callback.onError(OkHelper.ERRO_SERVER_MESSAGE);
+//                        break;
+//                    case OkHelper.ERRO_UPTATE:
+//                        callback.onError(OkHelper.ERRO_UPTATE_MESSAGE);
+//                        break;
+//                    default:
+//                        callback.onError(OkHelper.ERRO_NOT_MESSAGE);
+//                        break;
+//                }
+//            }
+//
+//            @Override
+//            public void onError(Response<DataBackResult<UpdateResultBean>> response) {
+//                super.onError(response);
+//                callback.onError(OkHelper.ERRO_MESSAGE);
+//            }
+//        });
 
 
     }
@@ -221,35 +227,36 @@ public class RemoteUpdateManage {
      * @create_time 2019/4/13
      */
     public void getHistoryUpdate(String vin, int pi, int ps, String uDate, final ResponseCallback<UpdateVehicleTasksResBean> callback) {
-        OkHelper.getUpdateTaskList(context, vin, pi, ps, uDate, new JsonCallback<DataBackResult<UpdateVehicleTasksResBean>>() {
-            @Override
-            public void onSuccess(Response<DataBackResult<UpdateVehicleTasksResBean>> response) {
-                switch (response.body().getStatusCode()) {
-                    case OkHelper.SUCCESS:
-                        callback.onSuccess(response.body().getBody());
-
-                        break;
-                    case OkHelper.ERRO_NOT_FOUNT:
-                        callback.onError(OkHelper.ERRO_NOT_FOUNT_MESSAGE);
-                        break;
-                    case OkHelper.ERRO_SERVER:
-                        callback.onError(OkHelper.ERRO_SERVER_MESSAGE);
-                        break;
-                    case OkHelper.ERRO_UPTATE:
-                        callback.onError(OkHelper.ERRO_UPTATE_MESSAGE);
-                        break;
-                    default:
-                        callback.onError(OkHelper.ERRO_NOT_MESSAGE);
-                        break;
-                }
-            }
-
-            @Override
-            public void onError(Response<DataBackResult<UpdateVehicleTasksResBean>> response) {
-                super.onError(response);
-                callback.onError(OkHelper.ERRO_MESSAGE);
-            }
-        });
+        callback.onSuccess(simulationModle.getUpdateVehicleTasksResBean());
+//        OkHelper.getUpdateTaskList(context, vin, pi, ps, uDate, new JsonCallback<DataBackResult<UpdateVehicleTasksResBean>>() {
+//            @Override
+//            public void onSuccess(Response<DataBackResult<UpdateVehicleTasksResBean>> response) {
+//                switch (response.body().getStatusCode()) {
+//                    case OkHelper.SUCCESS:
+//                        callback.onSuccess(response.body().getBody());
+//
+//                        break;
+//                    case OkHelper.ERRO_NOT_FOUNT:
+//                        callback.onError(OkHelper.ERRO_NOT_FOUNT_MESSAGE);
+//                        break;
+//                    case OkHelper.ERRO_SERVER:
+//                        callback.onError(OkHelper.ERRO_SERVER_MESSAGE);
+//                        break;
+//                    case OkHelper.ERRO_UPTATE:
+//                        callback.onError(OkHelper.ERRO_UPTATE_MESSAGE);
+//                        break;
+//                    default:
+//                        callback.onError(OkHelper.ERRO_NOT_MESSAGE);
+//                        break;
+//                }
+//            }
+//
+//            @Override
+//            public void onError(Response<DataBackResult<UpdateVehicleTasksResBean>> response) {
+//                super.onError(response);
+//                callback.onError(OkHelper.ERRO_MESSAGE);
+//            }
+//        });
     }
 
 
@@ -263,34 +270,35 @@ public class RemoteUpdateManage {
      * @create_time 2019/4/27
      */
     public void confirmUpgrade(String taskcarId, String uDate, int type, int result, final ResponseCallback<UpdateConfirInterfaceResBean> callback) {
-        OkHelper.confirmUpgrade(context, taskcarId, uDate, type, result, new JsonCallback<DataBackResult<UpdateConfirInterfaceResBean>>() {
-            @Override
-            public void onSuccess(Response<DataBackResult<UpdateConfirInterfaceResBean>> response) {
-                switch (response.body().getStatusCode()) {
-                    case OkHelper.SUCCESS:
-                        callback.onSuccess(response.body().getBody());
-                        break;
-                    case OkHelper.ERRO_NOT_FOUNT:
-                        callback.onError(OkHelper.ERRO_NOT_FOUNT_MESSAGE);
-                        break;
-                    case OkHelper.ERRO_SERVER:
-                        callback.onError(OkHelper.ERRO_SERVER_MESSAGE);
-                        break;
-                    case OkHelper.ERRO_UPTATE:
-                        callback.onError(OkHelper.ERRO_UPTATE_MESSAGE);
-                        break;
-                    default:
-                        callback.onError(OkHelper.ERRO_NOT_MESSAGE);
-                        break;
-                }
-            }
-
-            @Override
-            public void onError(Response<DataBackResult<UpdateConfirInterfaceResBean>> response) {
-                super.onError(response);
-                callback.onError(OkHelper.ERRO_MESSAGE);
-            }
-        });
+        callback.onSuccess(simulationModle.getUpdateConfirInterfaceResBean());
+//        OkHelper.confirmUpgrade(context, taskcarId, uDate, type, result, new JsonCallback<DataBackResult<UpdateConfirInterfaceResBean>>() {
+//            @Override
+//            public void onSuccess(Response<DataBackResult<UpdateConfirInterfaceResBean>> response) {
+//                switch (response.body().getStatusCode()) {
+//                    case OkHelper.SUCCESS:
+//                        callback.onSuccess(response.body().getBody());
+//                        break;
+//                    case OkHelper.ERRO_NOT_FOUNT:
+//                        callback.onError(OkHelper.ERRO_NOT_FOUNT_MESSAGE);
+//                        break;
+//                    case OkHelper.ERRO_SERVER:
+//                        callback.onError(OkHelper.ERRO_SERVER_MESSAGE);
+//                        break;
+//                    case OkHelper.ERRO_UPTATE:
+//                        callback.onError(OkHelper.ERRO_UPTATE_MESSAGE);
+//                        break;
+//                    default:
+//                        callback.onError(OkHelper.ERRO_NOT_MESSAGE);
+//                        break;
+//                }
+//            }
+//
+//            @Override
+//            public void onError(Response<DataBackResult<UpdateConfirInterfaceResBean>> response) {
+//                super.onError(response);
+//                callback.onError(OkHelper.ERRO_MESSAGE);
+//            }
+//        });
     }
 
 
