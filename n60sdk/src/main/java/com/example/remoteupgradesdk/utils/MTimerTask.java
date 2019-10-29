@@ -25,11 +25,11 @@ public class MTimerTask {
         task = new TimerTask() {
             @Override
             public void run() {
-                if (simulationModle.getUpdateProgressBean(vin, ++progress).getResult().getProgress() == 100) {
+                if (simulationModle.getUpdateProgressBean(vin, ++progress).getResult().getProgress() == 101) {
                     stop();
-                    progress = 0;
                 }
                 callback.onSuccess(simulationModle.getUpdateProgressBean(vin, progress));
+
                 //                OkHelper.queryUpdateProgress(context, vin, uDate, taskCarId, new JsonCallback<DataBackResult<UpdateProgressBean>>() {
 //                    @Override
 //                    public void onSuccess(Response<DataBackResult<UpdateProgressBean>> response) {
