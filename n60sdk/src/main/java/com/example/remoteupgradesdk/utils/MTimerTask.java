@@ -17,54 +17,48 @@ public class MTimerTask {
     private TimerTask task;
     private static final int DELAY_TIME = 5 * 1000;
 
-    private SimulationModle simulationModle = new SimulationModle();
-    private int progress = 0;
 
     public MTimerTask(final Context context, final String vin, final String taskCarId, final String uDate, final ResponseCallback<UpdateProgressBean> callback) {
         timer = new Timer();
         task = new TimerTask() {
             @Override
             public void run() {
-                if (simulationModle.getUpdateProgressBean(vin, ++progress).getResult().getProgress() == 100) {
-                    stop();
-                }
-                callback.onSuccess(simulationModle.getUpdateProgressBean(vin, progress));
 
-                //                OkHelper.queryUpdateProgress(context, vin, uDate, taskCarId, new JsonCallback<DataBackResult<UpdateProgressBean>>() {
-//                    @Override
-//                    public void onSuccess(Response<DataBackResult<UpdateProgressBean>> response) {
-//                        switch (response.body().getStatusCode()) {
-//                            case OkHelper.SUCCESS:
-//                                if (response.body().getBody().getResult() != null) {
-//                                    if (response.body().getBody().getResult().getProgress() == 100) {
-//                                        stop();
-//                                    }
-//                                }
-//                                response.body().getBody().getResult().setVin(vin);
-//                                callback.onSuccess(response.body().getBody());
-//                                break;
-//                            case OkHelper.ERRO_NOT_FOUNT:
-//                                callback.onError(OkHelper.ERRO_NOT_FOUNT_MESSAGE);
-//                                break;
-//                            case OkHelper.ERRO_SERVER:
-//                                callback.onError(OkHelper.ERRO_SERVER_MESSAGE);
-//                                break;
-//                            case OkHelper.ERRO_UPTATE:
-//                                callback.onError(OkHelper.ERRO_UPTATE_MESSAGE);
-//                                break;
-//                            default:
-//                                callback.onError(OkHelper.ERRO_NOT_MESSAGE);
-//                                break;
-//                        }
-//
-//                    }
-//
-//                    @Override
-//                    public void onError(Response<DataBackResult<UpdateProgressBean>> response) {
-//                        super.onError(response);
-//                        callback.onError(OkHelper.ERRO_MESSAGE);
-//                    }
-//                });
+                                OkHelper.queryUpdateProgress(context, vin, uDate, taskCarId, new JsonCallback<DataBackResult<UpdateProgressBean>>() {
+                    @Override
+                    public void onSuccess(Response<DataBackResult<UpdateProgressBean>> response) {
+                        switch (response.body().getStatusCode()) {
+                            case OkHelper.SUCCESS:
+                                if (response.body().getBody().getResult() != null) {
+                                    if (response.body().getBody().getResult().getProgress() == 100) {
+                                        stop();
+                                    }
+                                }
+                                response.body().getBody().getResult().setVin(vin);
+                                callback.onSuccess(response.body().getBody());
+                                break;
+                            case OkHelper.ERRO_NOT_FOUNT:
+                                callback.onError(OkHelper.ERRO_NOT_FOUNT_MESSAGE);
+                                break;
+                            case OkHelper.ERRO_SERVER:
+                                callback.onError(OkHelper.ERRO_SERVER_MESSAGE);
+                                break;
+                            case OkHelper.ERRO_UPTATE:
+                                callback.onError(OkHelper.ERRO_UPTATE_MESSAGE);
+                                break;
+                            default:
+                                callback.onError(OkHelper.ERRO_NOT_MESSAGE);
+                                break;
+                        }
+
+                    }
+
+                    @Override
+                    public void onError(Response<DataBackResult<UpdateProgressBean>> response) {
+                        super.onError(response);
+                        callback.onError(OkHelper.ERRO_MESSAGE);
+                    }
+                });
             }
         };
 
