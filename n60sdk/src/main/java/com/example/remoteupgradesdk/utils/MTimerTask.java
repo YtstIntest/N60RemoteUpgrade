@@ -33,9 +33,9 @@ public class MTimerTask {
                                     if (response.body().getBody().getResult().getProgress() == 100) {
                                         stop();
                                     }
-                                }
-                                if (vin!=null){
-                                    response.body().getBody().getResult().setVin(vin);
+                                    if (vin!=null){
+                                        response.body().getBody().getResult().setVin(vin);
+                                    }
                                 }
                                 callback.onSuccess(response.body().getBody());
                                 break;
