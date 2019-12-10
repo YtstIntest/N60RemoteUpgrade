@@ -55,6 +55,7 @@ public class UpdateResultBean {
              */
 
             private int result;
+            private int resultCode;
 
             public int getResult() {
                 return result;
@@ -62,6 +63,14 @@ public class UpdateResultBean {
 
             public void setResult(int result) {
                 this.result = result;
+            }
+
+            public int getResultCode() {
+                return resultCode;
+            }
+
+            public void setResultCode(int resultCode) {
+                this.resultCode = resultCode;
             }
         }
 }

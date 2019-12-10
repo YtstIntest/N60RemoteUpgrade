@@ -56,7 +56,9 @@ public class UpdateProgressBean {
 
         private String vin;
         private int result;
+        private int resultCode;
         private int progress;
+
 
         public String getVin() {
             return vin;
@@ -72,6 +74,14 @@ public class UpdateProgressBean {
 
         public void setResult(int result) {
             this.result = result;
+        }
+
+        public int getResultCode() {
+            return resultCode;
+        }
+
+        public void setResultCode(int resultCode) {
+            this.resultCode = resultCode;
         }
 
         public int getProgress() {
