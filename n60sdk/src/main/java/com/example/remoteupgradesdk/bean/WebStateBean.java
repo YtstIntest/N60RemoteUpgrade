@@ -54,6 +54,7 @@ public class WebStateBean {
          */
 
         private int status;
+        private int resultCode;
 
         public int getStatus() {
             return status;
@@ -61,6 +62,14 @@ public class WebStateBean {
 
         public void setStatus(int status) {
             this.status = status;
+        }
+
+        public int getResultCode() {
+            return resultCode;
+        }
+
+        public void setResultCode(int resultCode) {
+            this.resultCode = resultCode;
         }
     }
 }
