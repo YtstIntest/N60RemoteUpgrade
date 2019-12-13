@@ -14,11 +14,17 @@ import com.example.remoteupgradesdk.configs.DataBackResult;
 import com.example.remoteupgradesdk.configs.OkHelper;
 import com.example.remoteupgradesdk.interfaces.ResponseCallback;
 import com.example.remoteupgradesdk.utils.MTimerTask;
-import com.example.remoteupgradesdk.utils.SimulationModle;
+import com.lzy.okgo.https.HttpsUtils;
+import com.lzy.okgo.interceptor.HttpLoggingInterceptor;
 import com.lzy.okgo.model.Response;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+
+import okhttp3.OkHttpClient;
 
 
 public class RemoteUpdateManage {
@@ -29,6 +35,19 @@ public class RemoteUpdateManage {
     public RemoteUpdateManage(Context context) {
 
         this.context = context;
+    }
+
+
+    public void initOtaSDK(String path) throws IOException {
+        OkHttpClient.Builder builder = new OkHttpClient.Builder();
+        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor("OTA_SDK_LOG");
+        //log打印级别，决定了log显示的详细程度
+        loggingInterceptor.setPrintLevel(HttpLoggingInterceptor.Level.BODY);
+        //log颜色级别，决定了log在控制台显示的颜色
+        loggingInterceptor.setColorLevel(Level.INFO);
+        builder.addInterceptor(loggingInterceptor);
+        HttpsUtils.SSLParams sslParams = HttpsUtils.getSslSocketFactory(new FileInputStream(path));
+        builder.sslSocketFactory(sslParams.sSLSocketFactory,sslParams.trustManager);
     }
 
 
