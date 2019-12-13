@@ -38,7 +38,7 @@ public class RemoteUpdateManage {
     }
 
 
-    public void initOtaSDK(String path) throws IOException {
+    public void initOtaSDK(String name) throws IOException {
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
         HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor("OTA_SDK_LOG");
         //log打印级别，决定了log显示的详细程度
@@ -46,7 +46,7 @@ public class RemoteUpdateManage {
         //log颜色级别，决定了log在控制台显示的颜色
         loggingInterceptor.setColorLevel(Level.INFO);
         builder.addInterceptor(loggingInterceptor);
-        HttpsUtils.SSLParams sslParams = HttpsUtils.getSslSocketFactory(new FileInputStream(path));
+        HttpsUtils.SSLParams sslParams = HttpsUtils.getSslSocketFactory(context.getAssets().open(name));
         builder.sslSocketFactory(sslParams.sSLSocketFactory,sslParams.trustManager);
     }
 
