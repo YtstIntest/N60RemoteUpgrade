@@ -41,15 +41,19 @@ public class MTimerTask {
                                 break;
                             case OkHelper.ERRO_NOT_FOUNT:
                                 callback.onError(OkHelper.ERRO_NOT_FOUNT_MESSAGE);
+                                stop();
                                 break;
                             case OkHelper.ERRO_SERVER:
                                 callback.onError(OkHelper.ERRO_SERVER_MESSAGE);
+                                stop();
                                 break;
                             case OkHelper.ERRO_UPTATE:
                                 callback.onError(OkHelper.ERRO_UPTATE_MESSAGE);
+                                stop();
                                 break;
                             default:
                                 callback.onError(OkHelper.ERRO_NOT_MESSAGE);
+                                stop();
                                 break;
                         }
 
@@ -59,6 +63,7 @@ public class MTimerTask {
                     public void onError(Response<DataBackResult<UpdateProgressBean>> response) {
                         super.onError(response);
                         callback.onError(OkHelper.ERRO_MESSAGE);
+                        stop();
                     }
                 });
             }
