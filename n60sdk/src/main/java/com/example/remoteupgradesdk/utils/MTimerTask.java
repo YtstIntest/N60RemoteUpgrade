@@ -30,7 +30,7 @@ public class MTimerTask {
                         switch (response.body().getStatusCode()) {
                             case OkHelper.SUCCESS:
                                 if (response.body().getBody().getResult() != null) {
-                                    if (response.body().getBody().getResult().getProgress() == 100||response.body().getStatusCode()!=-1) {
+                                    if (response.body().getBody().getResult().getProgress() == 100||response.body().getBody().getResult().getResultCode()!=-1) {
                                         stop();
                                     }
                                     if (vin!=null){
