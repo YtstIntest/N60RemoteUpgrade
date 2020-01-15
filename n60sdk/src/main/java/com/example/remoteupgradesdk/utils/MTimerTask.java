@@ -15,7 +15,7 @@ import java.util.TimerTask;
 public class MTimerTask {
     private Timer timer;
     private TimerTask task;
-    private static final int DELAY_TIME = 5 * 1000;
+    private static final int DELAY_TIME = 2 * 1000;
 
 
     public MTimerTask(final Context context, final String vin, final String taskCarId, final String uDate, final ResponseCallback<UpdateProgressBean> callback) {
