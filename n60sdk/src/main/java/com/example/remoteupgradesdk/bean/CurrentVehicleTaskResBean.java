@@ -66,7 +66,7 @@ public class CurrentVehicleTaskResBean {
         private String taskCarId;
         private int taskType;
         private String nVer;
-        private int size;
+        private double size;
         private String description;
         private int duration;
         private int isNewTask;
@@ -96,7 +96,7 @@ public class CurrentVehicleTaskResBean {
             this.nVer = nVer;
         }
 
-        public int getSize() {
+        public double getSize() {
             return size;
         }
 
