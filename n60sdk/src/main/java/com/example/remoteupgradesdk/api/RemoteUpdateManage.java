@@ -1,6 +1,7 @@
 package com.example.remoteupgradesdk.api;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.example.remoteupgradesdk.bean.CurrentVehicleTaskResBean;
 import com.example.remoteupgradesdk.bean.UpdateConfirInterfaceResBean;
@@ -38,17 +39,25 @@ public class RemoteUpdateManage {
     }
 
 
-//    public void initOtaSDK(String name) throws IOException {
-//        OkHttpClient.Builder builder = new OkHttpClient.Builder();
-//        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor("OTA_SDK_LOG");
-//        //log打印级别，决定了log显示的详细程度
-//        loggingInterceptor.setPrintLevel(HttpLoggingInterceptor.Level.BODY);
-//        //log颜色级别，决定了log在控制台显示的颜色
-//        loggingInterceptor.setColorLevel(Level.INFO);
-//        builder.addInterceptor(loggingInterceptor);
-//        HttpsUtils.SSLParams sslParams = HttpsUtils.getSslSocketFactory(context.getAssets().open(name));
-//        builder.sslSocketFactory(sslParams.sSLSocketFactory,sslParams.trustManager);
-//    }
+    public void initOtaSDK(String name)  {
+        OkHttpClient.Builder builder = new OkHttpClient.Builder();
+        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor("OTA_SDK_LOG");
+        //log打印级别，决定了log显示的详细程度
+        loggingInterceptor.setPrintLevel(HttpLoggingInterceptor.Level.BODY);
+        //log颜色级别，决定了log在控制台显示的颜色
+        loggingInterceptor.setColorLevel(Level.INFO);
+        builder.addInterceptor(loggingInterceptor);
+        try {
+            HttpsUtils.SSLParams sslParams = HttpsUtils.getSslSocketFactory(context.getAssets().open(name));
+            builder.sslSocketFactory(sslParams.sSLSocketFactory,sslParams.trustManager);
+            Log.e("OTA_SDK_LOG","证书加载成功！！！");
+        }catch (IOException e){
+            e.printStackTrace();
+            Log.e("OTA_SDK_LOG","证书加载失败！！！");
+
+        }
+
+    }
 
 
     /**

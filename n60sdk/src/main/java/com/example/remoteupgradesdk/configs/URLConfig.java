@@ -1,7 +1,7 @@
 package com.example.remoteupgradesdk.configs;
 
 public class URLConfig {
-    public static String IP = "http://223.75.51.168";
+    public static String IP = "https://223.75.51.168";
 
 
     public static String PORT_LASGING = ":62078/api/fota/";//联调环境

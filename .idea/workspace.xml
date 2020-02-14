@@ -9,12 +9,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="783039b7-6e88-4b8a-b73f-c239888d5f37" name="Default" comment="修改查询进度接口轮询时间">
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+    <list default="true" id="783039b7-6e88-4b8a-b73f-c239888d5f37" name="Default" comment="修改新版数据size数据类型double">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/bean/CurrentVehicleTaskResBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/bean/CurrentVehicleTaskResBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/api/RemoteUpdateManage.java" beforeDir="false" afterPath="$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/api/RemoteUpdateManage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/configs/URLConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/configs/URLConfig.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,11 +52,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/api/RemoteUpdateManage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="104" column="114" lean-forward="true" selection-start-line="104" selection-start-column="114" selection-end-line="104" selection-end-column="114" />
+            <state relative-caret-position="613">
+              <caret line="55" column="43" selection-start-line="55" selection-start-column="43" selection-end-line="55" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -66,11 +64,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/bean/CurrentVehicleTaskResBean.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="98" column="21" selection-start-line="98" selection-start-column="21" selection-end-line="98" selection-end-column="21" />
+            <state relative-caret-position="-277">
+              <caret line="65" column="33" selection-start-line="65" selection-start-column="33" selection-end-line="65" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -78,7 +76,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/utils/MTimerTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
+            <state relative-caret-position="375">
               <caret line="35" column="51" selection-start-line="35" selection-start-column="51" selection-end-line="35" selection-end-column="51" />
             </state>
           </provider>
@@ -87,8 +85,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/configs/URLConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-9">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="45">
+              <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -96,8 +94,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/configs/OkHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="25" column="46" lean-forward="true" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
+            <state relative-caret-position="-1524">
+              <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/configs/DataBackResult.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -132,17 +139,18 @@
         <option value="$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/bean/WebStateBean.java" />
         <option value="$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/configs/OkHelper.java" />
         <option value="$PROJECT_DIR$/n60sdk/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/api/RemoteUpdateManage.java" />
-        <option value="$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/configs/URLConfig.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/bean/UpdateProgressBean.java" />
         <option value="$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/utils/MTimerTask.java" />
         <option value="$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/bean/CurrentVehicleTaskResBean.java" />
+        <option value="$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/configs/URLConfig.java" />
+        <option value="$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/api/RemoteUpdateManage.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+    <option name="x" value="-2" />
+    <option name="y" value="64" />
     <option name="width" value="1440" />
     <option name="height" value="823" />
   </component>
@@ -151,9 +159,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -251,6 +256,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -495,14 +503,21 @@
       <option name="project" value="LOCAL" />
       <updated>1579050524408</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="修改新版数据size数据类型double">
+      <created>1579252361082</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1579252361082</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="823" extended-state="6" />
+    <frame x="-2" y="64" width="1440" height="823" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49861878" visible="true" weight="0.20600858" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49861878" visible="true" weight="0.20600858" />
       <window_info id="Structure" order="1" sideWeight="0.5013812" side_tool="true" weight="0.2546495" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Build Variants" order="3" side_tool="true" />
@@ -561,7 +576,8 @@
     <MESSAGE value="修改获取进度接口停止状态2" />
     <MESSAGE value="修改获取进度接口停止状态3" />
     <MESSAGE value="修改查询进度接口轮询时间" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改查询进度接口轮询时间" />
+    <MESSAGE value="修改新版数据size数据类型double" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改新版数据size数据类型double" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/configs/Config.java" />
@@ -659,13 +675,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/configs/DataBackResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
@@ -681,12 +690,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/n60sdk/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
+      <provider editor-type-id="android-manifest" />
     </entry>
     <entry file="file://$PROJECT_DIR$/n60sdk/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
@@ -731,39 +740,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/utils/MTimerTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
+        <state relative-caret-position="375">
           <caret line="35" column="51" selection-start-line="35" selection-start-column="51" selection-end-line="35" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/configs/URLConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/configs/OkHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="25" column="46" lean-forward="true" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/api/RemoteUpdateManage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="104" column="114" lean-forward="true" selection-start-line="104" selection-start-column="114" selection-end-line="104" selection-end-column="114" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/bean/CurrentVehicleTaskResBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="98" column="21" selection-start-line="98" selection-start-column="21" selection-end-line="98" selection-end-column="21" />
+        <state relative-caret-position="-277">
+          <caret line="65" column="33" selection-start-line="65" selection-start-column="33" selection-end-line="65" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/configs/DataBackResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/configs/OkHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1524">
+          <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/configs/URLConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/api/RemoteUpdateManage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="613">
+          <caret line="55" column="43" selection-start-line="55" selection-start-column="43" selection-end-line="55" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
