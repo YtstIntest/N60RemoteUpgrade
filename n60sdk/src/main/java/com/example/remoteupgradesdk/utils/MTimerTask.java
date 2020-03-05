@@ -26,10 +26,10 @@ public class MTimerTask {
             @Override
             public void run() {
 
-                OkHelper.queryUpdateProgress(context, vin, uDate, taskCarId, new JsonCallback<DataBackResult<UpdateProgressBean>>() {
-                    @Override
-                    public void onSuccess(Response<DataBackResult<UpdateProgressBean>> response) {
-
+//                OkHelper.queryUpdateProgress(context, vin, uDate, taskCarId, new JsonCallback<DataBackResult<UpdateProgressBean>>() {
+//                    @Override
+//                    public void onSuccess(Response<DataBackResult<UpdateProgressBean>> response) {
+//
                         if (simulationModle.getUpdateProgressBean(vin, ++progress).getResult().getProgress() == 100) {
                             stop();
                             progress = 0;
@@ -65,15 +65,15 @@ public class MTimerTask {
 //                                break;
 //                        }
 
-                    }
-
-                    @Override
-                    public void onError(Response<DataBackResult<UpdateProgressBean>> response) {
-                        super.onError(response);
-                        callback.onError(OkHelper.ERRO_MESSAGE);
-                        stop();
-                    }
-                });
+//                    }
+//
+//                    @Override
+//                    public void onError(Response<DataBackResult<UpdateProgressBean>> response) {
+//                        super.onError(response);
+//                        callback.onError(OkHelper.ERRO_MESSAGE);
+//                        stop();
+//                    }
+//                });
             }
         };
 

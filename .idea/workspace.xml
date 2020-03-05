@@ -9,14 +9,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="783039b7-6e88-4b8a-b73f-c239888d5f37" name="Default" comment="cer证书接口添加版本">
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+    <list default="true" id="783039b7-6e88-4b8a-b73f-c239888d5f37" name="Default" comment="模拟数据版本。">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/api/RemoteUpdateManage.java" beforeDir="false" afterPath="$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/api/RemoteUpdateManage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/utils/MTimerTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/utils/MTimerTask.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,7 +40,7 @@
         <entry file="file://$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/utils/SimulationModle.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="273">
-              <caret line="63" column="20" lean-forward="true" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
+              <caret line="63" column="20" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -54,11 +48,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/api/RemoteUpdateManage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1671">
-              <caret line="307" column="74" lean-forward="true" selection-start-line="307" selection-start-column="74" selection-end-line="307" selection-end-column="74" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="-740">
+              <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -66,8 +57,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/utils/MTimerTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="28" column="133" lean-forward="true" selection-start-line="28" selection-start-column="133" selection-end-line="28" selection-end-column="133" />
+            <state relative-caret-position="330">
+              <caret line="32" column="74" selection-start-line="32" selection-start-column="74" selection-end-line="32" selection-end-column="74" />
+              <folding>
+                <element signature="e#905#3733#0" expanded="true" />
+                <element signature="e#3732#3733#0" expanded="true" />
+                <element signature="e#3849#3850#0" expanded="true" />
+                <element signature="e#3916#3917#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -480,7 +477,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581657568345</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="模拟数据版本。">
+      <created>1583137259835</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1583137259835</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -522,7 +526,6 @@
     </layout>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="1.修改了部分接口输入输出属性；&#10;2.添加了获取当前版本信息接口、查询升级进度接口、查询升级结果接口；&#10;3.修改了定时任务方法，添加了多个定时任务操作。" />
     <MESSAGE value="文档上传" />
     <MESSAGE value="添加查询进度接口属性值" />
     <MESSAGE value="添加查询升级信息接口属性值" />
@@ -547,7 +550,8 @@
     <MESSAGE value="修改查询进度接口轮询时间" />
     <MESSAGE value="修改新版数据size数据类型double" />
     <MESSAGE value="cer证书接口添加版本" />
-    <option name="LAST_COMMIT_MESSAGE" value="cer证书接口添加版本" />
+    <MESSAGE value="模拟数据版本。" />
+    <option name="LAST_COMMIT_MESSAGE" value="模拟数据版本。" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/configs/Config.java" />
@@ -696,24 +700,27 @@
     <entry file="file://$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/utils/SimulationModle.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
-          <caret line="63" column="20" lean-forward="true" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
+          <caret line="63" column="20" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/api/RemoteUpdateManage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1671">
-          <caret line="307" column="74" lean-forward="true" selection-start-line="307" selection-start-column="74" selection-end-line="307" selection-end-column="74" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-740">
+          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/n60sdk/src/main/java/com/example/remoteupgradesdk/utils/MTimerTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="28" column="133" lean-forward="true" selection-start-line="28" selection-start-column="133" selection-end-line="28" selection-end-column="133" />
+        <state relative-caret-position="330">
+          <caret line="32" column="74" selection-start-line="32" selection-start-column="74" selection-end-line="32" selection-end-column="74" />
+          <folding>
+            <element signature="e#905#3733#0" expanded="true" />
+            <element signature="e#3732#3733#0" expanded="true" />
+            <element signature="e#3849#3850#0" expanded="true" />
+            <element signature="e#3916#3917#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
