@@ -1,10 +1,10 @@
 package com.example.remoteupgradesdk.configs;
 
 public class URLConfig {
-    public static String IP = "http://fota.bjev.com.cn";
+    public static String IP = "http://fota.bjev.com.cn";//正式服务器地址
 
 
-    public static String PORT_LASGING = ":9004/api/fota/";//联调环境
+    public static String PORT_LASGING = ":9004/api/fota/";
 
     public static String IP_PORT_LASGING = IP + PORT_LASGING;
 
