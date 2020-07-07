@@ -38,37 +38,27 @@ public class RemoteUpdateManage {
 
     public RemoteUpdateManage(Context context) {
         this.context = context;
-        initOtaSDK();
-
     }
 
 
-    public void initOtaSDK()  {
+    public void initOtaSDK(String name)  {
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
-//        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor("OTA_SDK_LOG");
-//        //log打印级别，决定了log显示的详细程度
-//        loggingInterceptor.setPrintLevel(HttpLoggingInterceptor.Level.BODY);
-//        //log颜色级别，决定了log在控制台显示的颜色
-//        loggingInterceptor.setColorLevel(Level.INFO);
-//        builder.addInterceptor(loggingInterceptor);
-//        try {
-//            HttpsUtils.SSLParams sslParams = HttpsUtils.getSslSocketFactory(context.getAssets().open(name));
-//            builder.sslSocketFactory(sslParams.sSLSocketFactory,sslParams.trustManager);
-//            Log.e("OTA_SDK_LOG","证书加载成功！！！");
-//        }catch (IOException e){
-//            e.printStackTrace();
-//            Log.e("OTA_SDK_LOG","证书加载失败！！！");
-//
-//        }
+        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor("OTA_SDK_LOG");
+        //log打印级别，决定了log显示的详细程度
+        loggingInterceptor.setPrintLevel(HttpLoggingInterceptor.Level.BODY);
+        //log颜色级别，决定了log在控制台显示的颜色
+        loggingInterceptor.setColorLevel(Level.INFO);
+        builder.addInterceptor(loggingInterceptor);
+        try {
+            HttpsUtils.SSLParams sslParams = HttpsUtils.getSslSocketFactory(context.getAssets().open(name));
+            builder.sslSocketFactory(sslParams.sSLSocketFactory,sslParams.trustManager);
+            Log.e("OTA_SDK_LOG","证书加载成功！！！");
+        }catch (IOException e){
+            e.printStackTrace();
+            Log.e("OTA_SDK_LOG","证书加载失败！！！");
 
-        HttpsUtils.SSLParams sslParams1 = HttpsUtils.getSslSocketFactory();
-        builder.sslSocketFactory(sslParams1.sSLSocketFactory, sslParams1.trustManager);
-        builder.hostnameVerifier(new HostnameVerifier() {
-            @Override
-            public boolean verify(String hostname, SSLSession session) {
-                return true;
-            }
-        });
+        }
+
 
 
 
