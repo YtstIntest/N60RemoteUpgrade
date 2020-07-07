@@ -1,5 +1,6 @@
 package com.example.remoteupgradesdk.api;
 
+import android.app.Application;
 import android.content.Context;
 import android.util.Log;
 
@@ -15,6 +16,7 @@ import com.example.remoteupgradesdk.configs.DataBackResult;
 import com.example.remoteupgradesdk.configs.OkHelper;
 import com.example.remoteupgradesdk.interfaces.ResponseCallback;
 import com.example.remoteupgradesdk.utils.MTimerTask;
+import com.lzy.okgo.OkGo;
 import com.lzy.okgo.https.HttpsUtils;
 import com.lzy.okgo.interceptor.HttpLoggingInterceptor;
 import com.lzy.okgo.model.Response;
@@ -41,7 +43,7 @@ public class RemoteUpdateManage {
     }
 
 
-    public void initOtaSDK(String name)  {
+    public void initOtaSDK(Application application,String name)  {
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
         HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor("OTA_SDK_LOG");
         //log打印级别，决定了log显示的详细程度
@@ -58,6 +60,7 @@ public class RemoteUpdateManage {
             Log.e("OTA_SDK_LOG","证书加载失败！！！");
 
         }
+        OkGo.getInstance().init(application).setOkHttpClient(builder.build());
 
 
 
