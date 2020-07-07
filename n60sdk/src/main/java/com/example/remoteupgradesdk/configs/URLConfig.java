@@ -3,14 +3,18 @@ package com.example.remoteupgradesdk.configs;
 public class URLConfig {
 //    public static String IP = "http://fota.bjev.com.cn";
 
-    public static String IP = "http://192.168.1.115";
+//    public static String IP = "http://192.168.1.115";
 
+    public static String IP = "https://218.205.165.103";
 
 //    public static String PORT_LASGING = ":9004/api/fota/";//正式服务器地址
 
 //    public static String PORT_LASGING = ":8883/api/fota/";//实验室服务器地址
 
-    public static String PORT_LASGING = ":62078/api/fota/";//联调服务器地址
+//    public static String PORT_LASGING = ":62078/api/fota/";//联调服务器地址
+
+    public static String PORT_LASGING = ":8083/api/fota/";//pki服务器地址
+
 
 
     public static String IP_PORT_LASGING = IP + PORT_LASGING;
