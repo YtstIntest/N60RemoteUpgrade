@@ -36,38 +36,22 @@ import okhttp3.OkHttpClient;
 
 public class RemoteUpdateManage {
     private Context context;
+    private Application application;
     private List<MTimerTask> tasks = new ArrayList<>();
 
 
-    public RemoteUpdateManage(Context context) {
-        this.context = context;
+    public RemoteUpdateManage(Application application) {
+        this.application = application;
+        this.context = application.getApplicationContext();
+
     }
 
 
-    public void initOtaSDK(Application application) {
-//        OkHttpClient.Builder builder = new OkHttpClient.Builder();
-//        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor("OTA_SDK_LOG");
-//        //log打印级别，决定了log显示的详细程度
-//        loggingInterceptor.setPrintLevel(HttpLoggingInterceptor.Level.BODY);
-//        //log颜色级别，决定了log在控制台显示的颜色
-//        loggingInterceptor.setColorLevel(Level.INFO);
-//        builder.addInterceptor(loggingInterceptor);
-//        try {
-//            HttpsUtils.SSLParams sslParams = HttpsUtils.getSslSocketFactory(context.getAssets().open(name));
-//            builder.sslSocketFactory(sslParams.sSLSocketFactory,sslParams.trustManager);
-//            Log.e("OTA_SDK_LOG","证书加载成功！！！");
-//        }catch (IOException e){
-//            e.printStackTrace();
-//            Log.e("OTA_SDK_LOG","证书加载失败！！！");
-//
-//        }
-//        OkGo.getInstance().init(application).setOkHttpClient(builder.build());
+    public void initOtaSDK() {
         OkHttpClient.Builder mBuilder = new OkHttpClient.Builder();
         mBuilder.sslSocketFactory(TrustAllCerts.createSSLSocketFactory());
         mBuilder.hostnameVerifier(new TrustAllCerts.TrustAllHostnameVerifier());
         OkGo.getInstance().init(application).setOkHttpClient(mBuilder.build());
-
-
     }
 
 
