@@ -48,10 +48,10 @@ public class RemoteUpdateManage {
 
 
     public void initOtaSDK() {
-        OkHttpClient.Builder mBuilder = new OkHttpClient.Builder();
-        mBuilder.sslSocketFactory(TrustAllCerts.createSSLSocketFactory());
-        mBuilder.hostnameVerifier(new TrustAllCerts.TrustAllHostnameVerifier());
-        OkGo.getInstance().init(application).setOkHttpClient(mBuilder.build());
+//        OkHttpClient.Builder mBuilder = new OkHttpClient.Builder();
+//        mBuilder.sslSocketFactory(TrustAllCerts.createSSLSocketFactory());
+//        mBuilder.hostnameVerifier(new TrustAllCerts.TrustAllHostnameVerifier());
+//        OkGo.getInstance().init(application).setOkHttpClient(mBuilder.build());
     }
 
 
