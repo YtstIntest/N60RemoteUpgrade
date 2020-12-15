@@ -5,7 +5,7 @@ public class URLConfig {
 
 //    public static String IP = "http://192.168.1.115";
 
-    public static String IP = "https://218.205.165.104";
+    public static String IP = "http://218.205.165.104";
 
 //    public static String PORT_LASGING = ":9004/api/fota/";//正式服务器地址
 
